@@ -51,16 +51,21 @@ class MyCache{
 	 */
 	public void setCache(String key,Object value){
 		w.lock();
-		System.out.println("线程："+Thread.currentThread().getName()+"开始写缓存。。。。");
 		try {
-			TimeUnit.SECONDS.sleep(1);
-		} catch (InterruptedException e)
-		{
-			e.printStackTrace();
+			System.out.println("线程："+Thread.currentThread().getName()+"开始写缓存。。。。");
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+			map.put(key,value);
+			System.out.println("线程："+Thread.currentThread().getName()+"写缓存完毕。。。。");
+		}finally {
+			w.unlock();
 		}
-		map.put(key,value);
-		System.out.println("线程："+Thread.currentThread().getName()+"写缓存完毕。。。。");
-		w.unlock();
+
+
 	}
 
 	/**
@@ -68,16 +73,21 @@ class MyCache{
 	 */
 	public void getCache(String key){
 		r.lock();
-		System.out.println("线程："+Thread.currentThread().getName()+"开始读缓存。。。。");
-		try {
-			TimeUnit.SECONDS.sleep(1);
-		} catch (InterruptedException e)
-		{
-			e.printStackTrace();
+		try{
+			System.out.println("线程："+Thread.currentThread().getName()+"开始读缓存。。。。");
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+			Object object = map.get(key);
+			System.out.println("线程："+Thread.currentThread().getName()+"读缓存完毕。。。。" + object);
+		}finally{
+			r.unlock();
 		}
-		Object object = map.get(key);
-		System.out.println("线程："+Thread.currentThread().getName()+"读缓存完毕。。。。" + object);
-		r.unlock();
+
+
 	}
 }
 
