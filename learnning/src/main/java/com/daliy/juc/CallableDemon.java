@@ -1,4 +1,4 @@
-package com.daliytest.juctest;
+package daliytest.juctest;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.FutureTask;
