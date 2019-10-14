@@ -1,4 +1,4 @@
-package com.daliytest.juctest;
+package com.daliy.juc;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;

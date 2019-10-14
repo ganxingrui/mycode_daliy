@@ -1,4 +1,4 @@
-package com.daliytest.juctest;
+package com.daliy.juc;
 
 import java.util.HashMap;
 import java.util.Map;
