@@ -25,7 +25,7 @@ public class ThreadLocalDemo {
 				}
 				System.out.println(Thread.currentThread().getName()+":"+threadLocal.get());
 				//注意threadLocal内存泄漏？源码分析
-				threadLocal.remove();
+				//threadLocal.remove();
 			}
 		},"A").start();
 
