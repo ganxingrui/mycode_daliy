@@ -7,7 +7,7 @@ package com.daliy.gof.create;
  */
 public class Singleton {
     //第二步：准备一个变量放该单例对象
-    private static Singleton singleton;
+    private volatile static Singleton singleton;
     //第一步：构造器私有化,避免外面创建对象
     private Singleton() {
     }
