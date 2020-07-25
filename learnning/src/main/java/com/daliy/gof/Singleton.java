@@ -1,4 +1,4 @@
-package com.daliy.gof.create;
+package com.daliy.gof;
 
 /**
  * @author Lenovo

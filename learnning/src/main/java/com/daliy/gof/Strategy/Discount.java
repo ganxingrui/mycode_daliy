@@ -1,5 +1,7 @@
 package com.daliy.gof.Strategy;
 
+import java.math.BigDecimal;
+
 public interface Discount {
-    public int doDiscount();
+    public BigDecimal doDiscount(Double sourcePrice);
 }

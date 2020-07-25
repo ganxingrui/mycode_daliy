@@ -43,6 +43,7 @@ public class DeadLockDemo {
 		 * 问题分析：
 		 * 1、jsp -l  查看当前java正在运行的进程，找到自己编写的。
 		 * 2、jstack  进程号
+		 *
 		 */
 	}
 }
